@@ -1,12 +1,10 @@
-﻿using ManagementApp.Infrastructure.Data;
+﻿using ManagementApp.Application.Common.Interfaces;
+using ManagementApp.Infrastructure.Data;
 using ManagementApp.Infrastructure.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ManagementApp.Infrastructure
 {
@@ -18,6 +16,8 @@ namespace ManagementApp.Infrastructure
                 options.UseSqlServer(
                     configuration.GetConnectionString("DefaultConnection"),
                     b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
+
+            services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
 
             services.AddDefaultIdentity<ApplicationUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
