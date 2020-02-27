@@ -1,4 +1,5 @@
 using ManagementApp.Api.Services;
+using ManagementApp.Application;
 using ManagementApp.Application.Common.Interfaces;
 using ManagementApp.Infrastructure;
 using Microsoft.AspNetCore.Builder;
@@ -22,6 +23,7 @@ namespace ManagementApp.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddApplication();
             services.AddInfrastructure(Configuration);
 
             services.AddScoped<ICurrentUserService, CurrentUserService>();
