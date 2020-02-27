@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ManagementApp.Application.Invoices.ViewModels
+﻿namespace ManagementApp.Application.Invoices.ViewModels
 {
     public class InvoiceItemViewModel
     {

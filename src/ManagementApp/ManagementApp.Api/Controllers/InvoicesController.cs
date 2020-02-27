@@ -4,9 +4,7 @@ using ManagementApp.Application.Invoices.Queries;
 using ManagementApp.Application.Invoices.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace ManagementApp.Api.Controllers

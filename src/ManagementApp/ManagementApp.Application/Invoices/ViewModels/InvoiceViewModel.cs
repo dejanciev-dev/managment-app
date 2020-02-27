@@ -1,7 +1,6 @@
 ﻿using ManagementApp.Domain.Enums;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ManagementApp.Application.Invoices.ViewModels
 {
