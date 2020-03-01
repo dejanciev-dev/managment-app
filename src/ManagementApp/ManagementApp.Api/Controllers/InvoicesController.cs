@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace ManagementApp.Api.Controllers
 {
     [Authorize]
-    public class InvoicesController : ApiBaseController
+    public class InvoicesController : ApiController
     {
         private readonly ICurrentUserService _currentUserService;
 

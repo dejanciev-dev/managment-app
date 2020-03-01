@@ -3,9 +3,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ManagementApp.Api
+namespace ManagementApp.Api.Controllers
 {
-    public abstract class ApiBaseController : ControllerBase
+    [Route("api/[controller]")]
+    [ApiController]
+    public abstract class ApiController : ControllerBase
     {
         private IMediator _mediator;
 
