@@ -42,7 +42,8 @@
       "operationGenerationMode": "MultipleClientsFromOperationId",
       "markOptionalProperties": true,
       "generateCloneMethod": false,
-      "typeStyle": "Interface",
+      "typeStyle": "Class",
+      "enumStyle": "Enum",
       "classTypes": [],
       "extendedClasses": [],
       "extensionCode": "ClientApp/src/utils/apiClientBase.ts",
@@ -64,7 +65,7 @@
       "enumNameGeneratorType": null,
       "serviceHost": null,
       "serviceSchemes": null,
-      "output": "ClientApp/src/utils/api.ts"
+      "output": null
     }
   }
 }
