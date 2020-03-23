@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 
-namespace ManagementApp.Infrastructure.Migrations
+namespace ManagementApp.Infrastructure.Persistence.Migrations
 {
     public partial class AddInvoice : Migration
     {

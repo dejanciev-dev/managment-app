@@ -1,18 +1,17 @@
-﻿using ManagementApp.Application.Invoices.ViewModels;
-using ManagementApp.Domain.Enums;
-using MediatR;
+﻿using ManagementApp.Domain.Enums;
 using System;
 using System.Collections.Generic;
 
-namespace ManagementApp.Application.Invoices.Commands
+namespace ManagementApp.Application.Invoices.ViewModels
 {
-    public class CreateInvoiceCommand : IRequest<int>
+    public class InvoiceVm
     {
-        public CreateInvoiceCommand()
+        public InvoiceVm()
         {
             this.InvoiceItems = new List<InvoiceItemVm>();
         }
 
+        public long Id { get; set; }
         public string InvoiceNumber { get; set; }
         public string Logo { get; set; }
         public string From { get; set; }
@@ -20,10 +19,10 @@ namespace ManagementApp.Application.Invoices.Commands
         public DateTime Date { get; set; }
         public string PaymentTerms { get; set; }
         public DateTime? DueDate { get; set; }
-        public double Discount { get; set; }
         public DiscountType DiscountType { get; set; }
-        public double Tax { get; set; }
+        public double Discount { get; set; }
         public TaxType TaxType { get; set; }
+        public double Tax { get; set; }
         public double AmountPaid { get; set; }
         public IList<InvoiceItemVm> InvoiceItems { get; set; }
     }

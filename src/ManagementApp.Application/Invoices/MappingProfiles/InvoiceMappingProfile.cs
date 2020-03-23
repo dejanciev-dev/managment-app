@@ -12,8 +12,8 @@ namespace ManagementApp.Application.Invoices.MappingProfiles
     {
         public InvoiceMappingProfile()
         {
-            CreateMap<Invoice, InvoiceViewModel>();
-            CreateMap<InvoiceItem, InvoiceItemViewModel>().ConstructUsing(i => new InvoiceItemViewModel
+            CreateMap<Invoice, InvoiceVm>();
+            CreateMap<InvoiceItem, InvoiceItemVm>().ConstructUsing(i => new InvoiceItemVm
             {
                 Id = i.Id,
                 Item = i.Item,
@@ -21,8 +21,8 @@ namespace ManagementApp.Application.Invoices.MappingProfiles
                 Rate = i.Rate
             });
 
-            CreateMap<InvoiceViewModel, Invoice>();
-            CreateMap<InvoiceItemViewModel, InvoiceItem>();
+            CreateMap<InvoiceVm, Invoice>();
+            CreateMap<InvoiceItemVm, InvoiceItem>();
 
             CreateMap<CreateInvoiceCommand, Invoice>();
         }

@@ -26,7 +26,7 @@ namespace ManagementApp.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IList<InvoiceViewModel>> Get()
+        public async Task<IList<InvoiceVm>> Get()
         {
             return await Mediator.Send(new GetUserInvoicesQuery { User = _currentUserService.UserId });
         }

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace ManagementApp.Application.Invoices.Handlers
 {
-    public class GetUserInvoicesQueryHandler : IRequestHandler<GetUserInvoicesQuery, IList<InvoiceViewModel>>
+    public class GetUserInvoicesQueryHandler : IRequestHandler<GetUserInvoicesQuery, IList<InvoiceVm>>
     {
         private readonly IApplicationDbContext _context;
         private readonly IMapper _mapper;
@@ -22,16 +22,16 @@ namespace ManagementApp.Application.Invoices.Handlers
             _mapper = mapper;
         }
 
-        public async Task<IList<InvoiceViewModel>> Handle(GetUserInvoicesQuery request, CancellationToken cancellationToken)
+        public async Task<IList<InvoiceVm>> Handle(GetUserInvoicesQuery request, CancellationToken cancellationToken)
         {
-            var result = new List<InvoiceViewModel>();
+            var result = new List<InvoiceVm>();
             var invoices = await _context.Invoices
                 .Include(i => i.InvoiceItems)
                 .Where(i => i.CreatedBy == request.User).ToListAsync();
 
             if (invoices != null)
             {
-                result = _mapper.Map<List<InvoiceViewModel>>(invoices);
+                result = _mapper.Map<List<InvoiceVm>>(invoices);
             }
             return result;
         }

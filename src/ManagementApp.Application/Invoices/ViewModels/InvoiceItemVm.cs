@@ -1,6 +1,6 @@
 ﻿namespace ManagementApp.Application.Invoices.ViewModels
 {
-    public class InvoiceItemViewModel
+    public class InvoiceItemVm
     {
         public long Id { get; set; }
         public string Item { get; set; }

@@ -1,17 +1,14 @@
-﻿using ManagementApp.Domain.Enums;
+﻿using ManagementApp.Application.Common.Mappings;
+using ManagementApp.Domain.Entities;
 using System;
 using System.Collections.Generic;
+using System.Text;
 
-namespace ManagementApp.Application.Invoices.ViewModels
+namespace ManagementApp.Application.Invoices.ViewModels.Export
 {
-    public class InvoiceViewModel
+    public class InvoiceRecord : IMapFrom<Invoice>
     {
-        public InvoiceViewModel()
-        {
-            this.InvoiceItems = new List<InvoiceItemViewModel>();
-        }
-
-        public long Id { get; set; }
+        public int Id { get; set; }
         public string InvoiceNumber { get; set; }
         public string Logo { get; set; }
         public string From { get; set; }
@@ -19,11 +16,8 @@ namespace ManagementApp.Application.Invoices.ViewModels
         public DateTime Date { get; set; }
         public string PaymentTerms { get; set; }
         public DateTime? DueDate { get; set; }
-        public DiscountType DiscountType { get; set; }
         public double Discount { get; set; }
-        public TaxType TaxType { get; set; }
         public double Tax { get; set; }
         public double AmountPaid { get; set; }
-        public IList<InvoiceItemViewModel> InvoiceItems { get; set; }
     }
 }
