@@ -48,6 +48,10 @@ namespace Infrastructure.IntegrationTests.Persistence
             {
                 Id = 1
             });
+            _sut.Invoices.Add(new Invoice
+            {
+                Id = 3//delete invoice
+            });
 
             _sut.SaveChanges();
         }
@@ -79,6 +83,26 @@ namespace Infrastructure.IntegrationTests.Persistence
             invoice.ShouldNotBeNull();
             invoice.LastModified.ShouldBe(_dateTime);
             invoice.LastModifiedBy.ShouldBe(_userId);
+        }
+
+        [Fact]
+        public async Task SaveChangesAsync_GivenExistingInvoice_ShouldDeleteGivenInvoice()
+        {
+            int id = 3;
+            var invoice = await _sut.Invoices.FindAsync(id);
+            _sut.Invoices.Remove(invoice);
+
+            await _sut.SaveChangesAsync();
+
+            invoice = await _sut.Invoices.FindAsync(id);
+
+            invoice.ShouldBeNull();
+        }
+
+        [Fact]
+        public void Database_DeleteDatabase()
+        {
+            Assert.True(_sut.Database.EnsureDeleted());
         }
 
         public void Dispose()
