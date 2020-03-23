@@ -1,31 +1,39 @@
 import React, { Component } from 'react';
 
-export class Counter extends Component {
-    static displayName = Counter.name;
+interface IProps {
 
-    constructor(props) {
-        super(props);
-        this.state = { currentCount: 0 };
-        this.incrementCounter = this.incrementCounter.bind(this);
-    }
+}
 
-    incrementCounter() {
-        this.setState({
-            currentCount: this.state.currentCount + 1
-        });
-    }
+interface IState {
+  currentCount: number
+}
 
-    render() {
-        return (
-            <div>
-                <h1>Counter</h1>
+export class Counter extends Component<IProps, IState> {
+  static displayName = Counter.name;
 
-                <p>This is a simple example of a React component.</p>
+  constructor(props: IProps) {
+    super(props);
+    this.state = { currentCount: 0 };
+    this.incrementCounter = this.incrementCounter.bind(this);
+  }
 
-                <p aria-live="polite">Current count: <strong>{this.state.currentCount}</strong></p>
+  incrementCounter() {
+    this.setState({
+      currentCount: this.state.currentCount + 1
+    });
+  }
 
-                <button className="btn btn-primary" onClick={this.incrementCounter}>Increment</button>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div>
+        <h1>Counter</h1>
+
+        <p>This is a simple example of a React component.</p>
+
+        <p aria-live="polite">Current count: <strong>{this.state.currentCount}</strong></p>
+
+        <button className="btn btn-primary" onClick={this.incrementCounter}>Increment</button>
+      </div>
+    );
+  }
 }
