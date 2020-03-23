@@ -55,17 +55,30 @@ namespace Infrastructure.IntegrationTests.Persistence
         [Fact]
         public async Task SaveChangesAsync_GivenNewInvoice_ShouldSetCreatedProperties()
         {
-            var item = new Invoice
+            var invoice = new Invoice
             {
                 Id = 2
             };
 
-            _sut.Invoices.Add(item);
+            _sut.Invoices.Add(invoice);
 
             await _sut.SaveChangesAsync();
 
-            item.Created.ShouldBe(_dateTime);
-            item.CreatedBy.ShouldBe(_userId);
+            invoice.Created.ShouldBe(_dateTime);
+            invoice.CreatedBy.ShouldBe(_userId);
+        }
+
+        [Fact]
+        public async Task SaveChangesAsync_GivenExistingInvoice_ShouldSetLastModifiedProperties()
+        {
+            int id = 1;
+            var invoice = await _sut.Invoices.FindAsync(id);
+            invoice.AmountPaid = 10.0;
+            await _sut.SaveChangesAsync();
+
+            invoice.ShouldNotBeNull();
+            invoice.LastModified.ShouldBe(_dateTime);
+            invoice.LastModifiedBy.ShouldBe(_userId);
         }
 
         public void Dispose()
