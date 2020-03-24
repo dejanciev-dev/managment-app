@@ -1,7 +1,4 @@
 ﻿using ManagementApp.Application.Common.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace ManagementApp.Application.Common.Interfaces

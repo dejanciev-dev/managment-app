@@ -1,8 +1,6 @@
 ﻿using ManagementApp.Application.Common.Mappings;
 using ManagementApp.Domain.Entities;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ManagementApp.Application.Invoices.ViewModels.Export
 {

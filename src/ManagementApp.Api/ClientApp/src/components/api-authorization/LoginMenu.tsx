@@ -5,7 +5,6 @@ import authService from './AuthorizeService';
 import { ApplicationPaths } from './ApiAuthorizationConstants';
 
 interface IProps {
-
 }
 
 interface IState {
@@ -62,7 +61,6 @@ export class LoginMenu extends Component<IProps, IState> {
                 <NavLink tag={Link} className="text-dark" to={logoutPath}>Logout</NavLink>
             </NavItem>
         </Fragment>);
-
     }
 
     anonymousView(registerPath: any, loginPath: any) {

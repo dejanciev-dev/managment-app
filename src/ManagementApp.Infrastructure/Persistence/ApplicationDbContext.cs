@@ -6,7 +6,6 @@ using ManagementApp.Infrastructure.Identity;
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
-using System;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;

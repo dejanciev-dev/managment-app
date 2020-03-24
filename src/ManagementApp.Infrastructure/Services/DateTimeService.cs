@@ -1,7 +1,5 @@
 ﻿using ManagementApp.Application.Common.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ManagementApp.Infrastructure.Services
 {

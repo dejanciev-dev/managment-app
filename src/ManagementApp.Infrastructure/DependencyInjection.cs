@@ -1,12 +1,12 @@
 ﻿using ManagementApp.Application.Common.Interfaces;
-using ManagementApp.Infrastructure.Persistence;
+using ManagementApp.Infrastructure.Files;
 using ManagementApp.Infrastructure.Identity;
+using ManagementApp.Infrastructure.Persistence;
+using ManagementApp.Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using ManagementApp.Infrastructure.Services;
-using ManagementApp.Infrastructure.Files;
 
 namespace ManagementApp.Infrastructure
 {

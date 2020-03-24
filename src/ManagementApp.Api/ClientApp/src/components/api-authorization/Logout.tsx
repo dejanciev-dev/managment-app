@@ -8,7 +8,7 @@ interface IProps {
     action: any
 }
 
-interface IState {    
+interface IState {
     message?: string | null,
     isReady: boolean,
     authenticated: boolean

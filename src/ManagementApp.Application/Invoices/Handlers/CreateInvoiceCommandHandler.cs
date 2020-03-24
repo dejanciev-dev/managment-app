@@ -3,7 +3,6 @@ using ManagementApp.Application.Common.Interfaces;
 using ManagementApp.Application.Invoices.Commands;
 using ManagementApp.Domain.Entities;
 using MediatR;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
