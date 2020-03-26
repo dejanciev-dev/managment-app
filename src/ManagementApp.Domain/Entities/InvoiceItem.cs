@@ -2,7 +2,7 @@
 
 namespace ManagementApp.Domain.Entities
 {
-    public class InvoiceItem : AuditEntity
+    public class InvoiceItem : AuditableEntity
     {
         public int Id { get; set; }
         public int InvoiceId { get; set; }

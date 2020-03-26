@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace ManagementApp.Domain.Entities
 {
-    public class Invoice : AuditEntity
+    public class Invoice : AuditableEntity
     {
         public Invoice()
         {

@@ -2,7 +2,7 @@
 
 namespace ManagementApp.Domain.Common
 {
-    public class AuditEntity
+    public class AuditableEntity
     {
         public string CreatedBy { get; set; }
 
