@@ -7,7 +7,7 @@ namespace ManagementApp.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public abstract class ApiController : ControllerBase
+    public abstract class BaseController : ControllerBase
     {
         private IMediator _mediator;
 
