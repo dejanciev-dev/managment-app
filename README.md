@@ -6,13 +6,6 @@
 * Entity Framework Core 3
 * React
 
-## Getting Started
-
-1. Install the latest [.NET Core SDK](https://dotnet.microsoft.com/download)
-2. Run `dotnet new --install Clean.Architecture.Solution.Template` to install the project template
-3. Run `dotnet new ca-sln` to create a new project
-4. Navigate to `src/WebUI` and run `dotnet run` to launch the project
-
 ## Overview
 
 ### Domain
