@@ -14,8 +14,7 @@ namespace ManagementApp.Application.Invoices.Validators
 
         protected override bool IsValid(PropertyValidatorContext context)
         {
-            var list = context.PropertyValue as IList<InvoiceItemVm>;
-            return list != null && list.Any();
+            return context.PropertyValue is IList<InvoiceItemVm> list && list.Any();
         }
     }
 }
